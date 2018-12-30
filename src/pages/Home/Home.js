@@ -1,27 +1,21 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export default class Home extends React.Component {
-    exampleMethod() {
-        console.log('JS is running');
-    }
+import metaData from '../../config/metaData'
 
-    head() {
-        return (
-            <Helmet>
-                <title>My home page</title>
-            </Helmet>
-        )
-    }
+const Home = () => {
 
-    render() {
-        return (
-            <div>
-                {this.head}
-                <h1>My home page</h1>
-                <p>Some content</p>
-                <button onClick={this.exampleMethod}>Click moro</button>
-            </div>
-        )
-    }
-}
+    const exampleMethod = () => {
+        console.log('Hello World');
+    };
+
+    return (
+        <div>
+            <Helmet title={metaData.home.title} />
+            <h1>My home page</h1>
+            <button onClick={exampleMethod}>Click moro</button>
+        </div>
+    )
+};
+
+export default Home;
